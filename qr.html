@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Just for You 🌙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f2027,#203a43);
+  font-family:sans-serif;
+  color:white;
+}
+.box{
+  text-align:center;
+  background:rgba(255,255,255,0.15);
+  padding:40px;
+  border-radius:30px;
+}
+button{
+  margin-top:20px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+  font-size:18px;
+}
+.small{opacity:.8;font-size:14px;margin-top:10px;}
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8d2a9c7fa2.mp3">
+</audio>
+
+<div class="box">
+  <h2>Hi Tanishka 💕</h2>
+  <p>You scanned something meant only for you.</p>
+  <button onclick="enter()">Enter 🌙</button>
+  <div class="small">Take a quiet moment</div>
+</div>
+
+<script>
+function enter(){
+  sessionStorage.setItem("fromQR","yes");
+  document.getElementById("music").play();
+  setTimeout(()=>location.href="index.html",600);
+}
+</script>
+
+</body>
+</html>
